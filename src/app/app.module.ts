@@ -8,12 +8,15 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoginPage } from '../pages/login/login';
+import { SharedService } from '../providers/shared.service';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -23,11 +26,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    SharedService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

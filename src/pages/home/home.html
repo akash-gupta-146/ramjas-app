@@ -3,16 +3,57 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Dashboard</ion-title>
   </ion-navbar>
+  <ion-toolbar no-border-top>
+      <ion-segment [(ngModel)]="TimeTable">
+        <ion-segment-button *ngFor="let day of dayArray3C;let d = index;" [value]="dayArray[d]">
+          {{ day }}
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>  
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<ion-content>
+  <div [ngSwitch]="TimeTable">
+      <ng-template let-day ngFor [ngForOf]="dayArray" let-j="index">
+    <ion-list *ngSwitchCase="day" >
+      <ion-list-header>
+        {{ date }}
+      </ion-list-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4 class="border border-right-progress" text-right>
+            <span class="textLarge">8:40 A.M.</span>
+              <br>
+            <span class="textGray">55 minutes</span>
+            <div><span class="colorInProgress textSmall">In Progress</span></div>
+          </ion-col>
+          <ion-col col-8 class="border border-left-progress">
+              <span class="textLarge">GE</span>
+              <br>
+              <span class="textGray">
+                <ion-icon name="person"></ion-icon> Miss Shini Mehta</span>
+              <div><span class="textSmall"><b>Room no. 3</b></span></div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-4 class="border border-right-notstarted" text-right>
+              <span class="textLarge">9:35 A.M.</span>
+                <br>
+              <span class="textGray">55 minutes</span>
+              <div><span class="colorNotstarted textSmall">Not Started</span></div>
+            </ion-col>
+            <ion-col col-8 class="border border-left-notstarted">
+                <span class="textLarge">RV</span>
+                <br>
+                <span class="textGray">
+                  <ion-icon name="person"></ion-icon> Mrs Renu Gupta</span>
+                <div><span class="textSmall"><b>Room no. 5</b></span></div>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+    </ion-list>
+  </ng-template>
+  </div>
 </ion-content>

@@ -1,0 +1,43 @@
+<ion-content padding class="background-image">
+  <img class="center-block" src="http://www.ramjascollege.edu/images/logo.png" margin-top>
+  <div text-center margin-top>
+    <h1 class="textWhite">Login</h1>
+  </div>
+
+  <ion-badge class="badge-full shadow1" color="primary" text-center margin-top>Login using Pre accounts</ion-badge>
+  <div padding>
+  <button  ion-item block color="facebook" no-lines>
+      <ion-icon item-left name="logo-facebook" ></ion-icon>
+      Facebook
+    </button>
+    <button margin-top ion-item color="google" no-lines>
+        <ion-icon item-left name="logo-google" ></ion-icon>
+        Google
+      </button>
+    </div>
+
+    <ion-badge class="badge-full shadow1" color="primary" text-center margin-bottom margin-top>or Sign in with e-mail</ion-badge>
+  <ion-list margin-top>
+      <ion-item>
+          <ion-icon name="options" item-left color="color9"></ion-icon>
+          <ion-label>Sign in as</ion-label>
+          <ion-select [(ngModel)]="category">
+            <ion-option value="student">Students</ion-option>
+            <ion-option value="faculty">Faculty</ion-option>
+            <ion-option value="hod">Head of Department</ion-option>
+            <ion-option value="principal">Pricipal/Manager</ion-option>
+            <ion-option value="admin">Admin</ion-option>
+          </ion-select>
+        </ion-item>    
+    <ion-item>
+      <ion-icon name="person" item-left color="color2"></ion-icon>
+      <ion-input type="text" [(ngModel)]="name" placeholder="Username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock" item-left color="color1"></ion-icon>
+      <ion-input type="password" placeholder="Password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button block ion-button color="" text-center (click)="login()">Submit</button>
+
+</ion-content>

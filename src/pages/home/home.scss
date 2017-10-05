@@ -1,3 +1,33 @@
 page-home {
 
 }
+.border{
+    border: 1px solid lightgray;
+}
+.border-right-progress{
+    border-right-color: color($colors, color16);
+}
+.border-left-progress{
+    border-left-color: color($colors, color16);
+}
+.colorInProgress{
+    color:color($colors, color16);
+}
+.textGray{
+    color:color($colors, color19);
+}
+.textSmall{
+    font-size:10px;
+}
+.textLarge{
+    font-size:20px;
+}
+.border-right-notstarted{
+    border-right-color: color($colors, color5);
+}
+.border-left-notstarted{
+    border-left-color: color($colors, color5);
+}
+.colorNotstarted{
+    color:color($colors, color5);
+}
