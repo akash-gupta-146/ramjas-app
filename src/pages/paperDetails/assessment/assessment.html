@@ -1,0 +1,66 @@
+<ion-header>
+        <ion-navbar color="primary">
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title>Result</ion-title>
+        </ion-navbar>
+      </ion-header>
+
+<ion-content class="background1">
+    <div class="background2">
+        <img class="center-block" src="http://www.ramjascollege.edu/images/logo.png" padding-top>
+        <h5 text-center margin-bottom class="textWhite">{{period.paper}} Assessment</h5>
+    </div>
+    <ion-card>
+        <ion-list>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                Total Questions
+                <span item-right><b>100</b></span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                Attended Questions
+                <span item-right><b>90</b></span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                Correct Answers
+                <span item-right><b>80</b></span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                Wrong Submissions
+                <span item-right><b>10</b></span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                Total obtained marks
+                <span item-right><b>80</b></span>
+            </ion-item>
+            <ion-item>
+                    <ion-icon name="filing"></ion-icon>
+                    Checked by
+                    <span item-right><b>Mrs. Reema</b></span>
+                </ion-item>
+        </ion-list>
+    </ion-card>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6>
+                <button ion-button block (click)="showAgreePrompt()">
+                    Agree
+                </button>
+            </ion-col>
+            <ion-col col-6 (click)="showDisAgreePrompt()">
+                <button ion-button block>
+                    Disagree
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+</ion-content>

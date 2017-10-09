@@ -1,0 +1,120 @@
+<ion-header>
+        <ion-navbar color="primary">
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title>Maths</ion-title>
+        </ion-navbar>
+      </ion-header>
+
+<ion-content class="background1">
+    <ion-item class="background2">
+        <b>
+            Description
+        </b>
+        <p class="paragraph textWhite">
+            <!-- {{paperInformation.description}} -->
+            Nullam in ante ac dui rutrum aliquam vel in elit. Donec feugiat convallis est, vel volutpat lacus tristique a. Aenean interdum turpis enim, a condimentum ipsum varius non
+        </p>
+        <ion-grid>
+                <ion-row>
+                <ion-col col-4>
+                    <button ion-button round small class="fullWidth">
+                        Assessment
+                    </button>
+                </ion-col>
+                <ion-col col-4>
+                        <button ion-button round small class="fullWidth" (click)="openPaperAssignmentPage()">
+                             Messages
+                        </button>
+                </ion-col>
+                <ion-col col-4>
+                        <button ion-button round small class="fullWidth">
+                                Assignment
+                           </button>
+                </ion-col>
+            </ion-row>
+
+            </ion-grid>
+    </ion-item>
+    <ion-item>
+            <ion-icon name="person" item-left></ion-icon>
+            Faculty name
+            <span item-right>
+                    <b>Miss Renu Bhadoriya</b>
+            </span>
+        </ion-item>
+    <ion-card padding>
+            <b>
+                Books
+            </b>
+            <p>
+                    <!-- {{paperInformation.books}} -->
+                    Book 1, Book 2, Book 3, Book 4
+
+            </p>
+    </ion-card>
+
+    <ion-card padding>
+        <b>
+            URLs
+        </b>
+        <p>
+                <!-- {{paperInformation.urls}} -->
+                ww.url1.com, www.url2.com, www.url3.com
+        </p>
+    </ion-card>
+  
+    <ion-card>
+            <ion-card-header>
+                <b>Attendance</b>
+                <br>
+                <progress value="22" max="100" style="width:100%; background:red">
+                    </progress>
+            </ion-card-header>
+            <ion-item>
+                    <b item-left>
+                        Total classes held
+                    </b>
+                    <span item-right>120</span>
+            </ion-item>
+            <ion-item>
+                        <b item-left>
+                            Present
+                        </b>
+                        <span item-right> 80</span>
+            </ion-item>
+            <ion-item>
+                        <b item-left>
+                            Absent
+                        </b>
+                    <span item-right>40</span>
+            </ion-item>
+        </ion-card> 
+
+
+<ion-list-header>
+    Videos
+</ion-list-header>
+<ion-card padding>
+    <p>
+        <!-- {{paperInformation.videos}} -->
+        video1, video2, video3
+    </p>
+</ion-card>
+
+<ion-card padding>
+        <b>
+            Whitepapers
+        </b>
+        <p>
+                <!-- {{paperInformation.whitepapers}} -->
+                Aenean lacinia elementum tempor. Etiam accumsan vel ligula id fermentum. Maecenas tincidunt neque mauris, ac ultrices justo porttitor sed. Sed sed semper arcu, vitae varius libero. Vestibulum tempus dolor eu sollicitudin rutrum. Fusce non iaculis erat. Cras pharetra ante sit amet odio varius porta. Duis quis tortor pharetra, ornare quam sed, cursus eros. Morbi et sapien nunc. Quisque tristique consectetur leo congue efficitur. Phasellus eu dolor vel nunc fermentum pellentesque.
+        </p>
+    </ion-card>
+
+
+
+
+
+</ion-content>

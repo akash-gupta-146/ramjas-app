@@ -1,0 +1,22 @@
+<ion-header>
+        <ion-navbar color="primary">
+            <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+              </button>
+            <ion-title>Due Assignments</ion-title>
+        </ion-navbar>
+    </ion-header>
+    
+    <ion-content class="background1">
+        <ion-card>
+            <img [src]="assignment.image">
+            <ion-card-header>
+                    <h2>{{ assignment.subject }} <ion-badge class="right">{{ assignment.leftTime }}</ion-badge></h2>
+            </ion-card-header>
+            <ion-card-content>
+                    <p>
+                        {{assignment.description}}
+                    </p>
+            </ion-card-content>
+        </ion-card>
+    </ion-content>

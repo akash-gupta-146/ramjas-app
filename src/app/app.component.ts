@@ -7,7 +7,9 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { SharedService } from '../providers/shared.service';
-
+import { ProfilePage } from '../pages/profile/profile';
+import { DueAssignmentsPage } from '../pages/assignments/dueAssignments/dueAssignments';
+import { AssessmentPage } from '../pages/assessment/assessment';
 @Component({
   templateUrl: 'app.html'
 })
@@ -21,6 +23,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
+  username: string;
 
   pages: Array<{title: string, component: any}>;
 
@@ -36,7 +39,15 @@ export class MyApp {
 
     this.students = [
       { title: 'Dashboard', component: HomePage, icon: 'xyz.png' },
-      { title: 'Students List', component: ListPage, icon: 'xyz.png' }
+      { title: 'Students List', component: ListPage, icon: 'xyz.png' },
+      { title: 'Profile', component: ProfilePage, icon: 'xyz.png' },
+      { title: 'Due Assignments', component: DueAssignmentsPage, icon: 'xyz.png' },
+      { title: 'Assessments', component: AssessmentPage, icon: 'xyz.png' },
+      { title: 'Date Sheet ', component: AssessmentPage, icon: 'xyz.png' },
+      { title: 'Events', component: AssessmentPage, icon: 'xyz.png' },
+      { title: 'Circular', component: AssessmentPage, icon: 'xyz.png' },
+      { title: 'Messages', component: AssessmentPage, icon: 'xyz.png' },
+      { title: 'Electives', component: AssessmentPage, icon: 'xyz.png' },
     ]
 
     this.faculty = [
@@ -77,6 +88,9 @@ export class MyApp {
           this.pages = this.principal;
         else if(data.category == 'admin')
           this.pages = this.hod;
+        
+          console.log(data.name);
+          this.username=data.name;
       })
     });
   }

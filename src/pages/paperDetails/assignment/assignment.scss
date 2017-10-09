@@ -1,0 +1,21 @@
+.image-slider{
+    height: 150px;
+    overflow-x: scroll;
+    display: -webkit-inline-box;
+    ion-card{
+        height: 130px;
+        img{
+            height:100%;
+        }
+    }
+}
+.pdf-slider{
+    height: 150px;
+    overflow-x: scroll;
+    display: -webkit-inline-box;
+}
+.video-slider{
+    height: 150px;
+    overflow-x: scroll;
+    display: -webkit-inline-box;
+}

@@ -1,59 +1,218 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Dashboard</ion-title>
   </ion-navbar>
-  <ion-toolbar no-border-top>
-      <ion-segment [(ngModel)]="TimeTable">
-        <ion-segment-button *ngFor="let day of dayArray3C;let d = index;" [value]="dayArray[d]">
-          {{ day }}
-        </ion-segment-button>
-      </ion-segment>
-    </ion-toolbar>  
+  <ion-toolbar no-border-top color="primary">
+    <ion-segment [(ngModel)]="TimeTable">
+      <ion-segment-button *ngFor="let day of dayArray3C;let d = index;" [value]="dayArray[d]">
+        <span class="textWhite">{{ day }}</span>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="background1">
   <div [ngSwitch]="TimeTable">
-      <ng-template let-day ngFor [ngForOf]="dayArray" let-j="index">
-    <ion-list *ngSwitchCase="day" >
-      <ion-list-header>
-        {{ date }}
-      </ion-list-header>
-      <ion-grid>
-        <ion-row>
-          <ion-col col-4 class="border border-right-progress" text-right>
-            <span class="textLarge">8:40 A.M.</span>
+    <ng-template let-day ngFor [ngForOf]="dayArray" let-j="index">
+      <ion-list *ngSwitchCase="day">
+        <ion-list-header>
+          {{ date }}
+        </ion-list-header>
+        <ion-list no-lines>
+          <ion-item-sliding *ngFor="let period of timeTable">
+            <button ion-item class="timetable-item" (click)="openPaperDetails(period)">
+              <ion-grid no-padding>
+                <ion-row>
+                  <ion-col col-4 class="border border-right-progress left-col" text-right>
+                    <h2 class="textLarge">{{period.time}}</h2>
+                    <span class="textGray">{{period.duration}}</span>
+                    <div><span class="colorInProgress textSmall">{{period.status}}</span></div>
+                  </ion-col>
+                  <ion-col col-8 col-8 class="border border-left-progress right-col">
+                    <h2 class="textLarge">{{period.paper}}</h2>
+                    <span class="textGray">
+          <ion-icon name="person"></ion-icon> {{period.teacher}}</span>
+                    <div><span class="textSmall"><b>Room no. {{period.room}}</b></span></div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </button>
+            <ion-item-options side="left">
+              <button ion-button color="primary" (click)="openAttendancePage(period)">
+              <ion-icon name="man"></ion-icon>
+              Attendance
+            </button>
+              <button ion-button color="secondary" (click)="openPaperMessagePage()">
+              <ion-icon name="chatbubbles"></ion-icon>
+              Message
+            </button>
+            </ion-item-options>
+            <ion-item-options side="right">
+              <button ion-button color="primary" (click)="openAssignmentPage(period)">
+              <ion-icon name="school"></ion-icon>
+              Assignment
+            </button>
+              <button ion-button color="primary" (click)="openNotesPage(period)">
+                <ion-icon name="paper"></ion-icon>
+                Notes
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+
+
+
+
+        <!-- <ion-grid>
+          <ion-row no-padding>
+            <ion-col col-4 class="border border-right-progress" text-right>
+              <span class="textLarge">8:40 A.M.</span>
               <br>
-            <span class="textGray">55 minutes</span>
-            <div><span class="colorInProgress textSmall">In Progress</span></div>
-          </ion-col>
-          <ion-col col-8 class="border border-left-progress">
-              <span class="textLarge">GE</span>
-              <br>
-              <span class="textGray">
+              <span class="textGray">55 minutes</span>
+              <div><span class="colorInProgress textSmall">In Progress</span></div>
+            </ion-col>
+            <ion-col col-8 class="border border-left-progress" no-padding>
+              <ion-item-sliding>
+                <ion-item no-padding no-lines no-margin class="timetable-item">
+                  <span class="textLarge">GE</span>
+                  <br>
+                  <span class="textGray">
                 <ion-icon name="person"></ion-icon> Miss Shini Mehta</span>
-              <div><span class="textSmall"><b>Room no. 3</b></span></div>
-          </ion-col>
-        </ion-row>
-        <ion-row>
+                  <div><span class="textSmall"><b>Room no. 3</b></span></div>
+                </ion-item>
+                <ion-item-options side="left">
+                  <button ion-button color="primary">
+                    <ion-icon name="man"></ion-icon>
+                    Attendance
+                  </button>
+                  <button ion-button color="secondary">
+                    <ion-icon name="chatbubbles"></ion-icon>
+                    Message
+                  </button>
+                </ion-item-options>
+                <ion-item-options side="right">
+                  <button ion-button color="primary">
+                    <ion-icon name="school"></ion-icon>
+                    Assignment
+                  </button>
+                  <button ion-button color="primary">
+                      <ion-icon name="paper"></ion-icon>
+                      Motes
+                    </button>
+                </ion-item-options>
+              </ion-item-sliding>
+            </ion-col>
+          </ion-row>
+          <ion-row>
             <ion-col col-4 class="border border-right-notstarted" text-right>
               <span class="textLarge">9:35 A.M.</span>
-                <br>
+              <br>
               <span class="textGray">55 minutes</span>
               <div><span class="colorNotstarted textSmall">Not Started</span></div>
             </ion-col>
             <ion-col col-8 class="border border-left-notstarted">
-                <span class="textLarge">RV</span>
-                <br>
-                <span class="textGray">
+              <span class="textLarge">RV</span>
+              <br>
+              <span class="textGray">
                   <ion-icon name="person"></ion-icon> Mrs Renu Gupta</span>
-                <div><span class="textSmall"><b>Room no. 5</b></span></div>
+              <div><span class="textSmall"><b>Room no. 5</b></span></div>
             </ion-col>
           </ion-row>
-      </ion-grid>
-    </ion-list>
-  </ng-template>
+          <ion-row>
+            <ion-col col-4 class="border border-right-notstarted" text-right>
+              <span class="textLarge">10:30 A.M.</span>
+              <br>
+              <span class="textGray">55 minutes</span>
+              <div><span class="colorNotstarted textSmall">Not Started</span></div>
+            </ion-col>
+            <ion-col col-8 class="border border-left-notstarted">
+              <span class="textLarge">AECC</span>
+              <br>
+              <span class="textGray">
+                    <ion-icon name="person"></ion-icon>Mr Anikait Garg</span>
+              <div><span class="textSmall"><b>Room no. 7</b></span></div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="border border-right-notstarted" text-right>
+              <span class="textLarge">12:20 A.M.</span>
+              <br>
+              <span class="textGray">55 minutes</span>
+              <div><span class="colorNotstarted textSmall">Not Started</span></div>
+            </ion-col>
+            <ion-col col-8 class="border border-left-notstarted">
+              <span class="textLarge">Maths II</span>
+              <br>
+              <span class="textGray">
+                      <ion-icon name="person"></ion-icon>Mr Anikait Garg</span>
+              <div><span class="textSmall"><b>Room no. 7</b></span></div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="border border-right-notstarted" text-right>
+              <span class="textLarge">1:15 P.M.</span>
+              <br>
+              <span class="textGray">55 minutes</span>
+              <div><span class="colorNotstarted textSmall">Not Started</span></div>
+            </ion-col>
+            <ion-col col-8 class="border border-left-notstarted">
+              <span class="textLarge"> </span>
+              <br>
+              <span class="textGray">
+                        <ion-icon name="person"></ion-icon> </span>
+              <div><span class="textSmall"><b> </b></span></div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="border border-right-notstarted" text-right>
+              <span class="textLarge">2:10 P.M.</span>
+              <br>
+              <span class="textGray">55 minutes</span>
+              <div><span class="colorNotstarted textSmall">Not Started</span></div>
+            </ion-col>
+            <ion-col col-8 class="border border-left-notstarted">
+              <span class="textLarge"> </span>
+              <br>
+              <span class="textGray">
+                          <ion-icon name="person"></ion-icon> </span>
+              <div><span class="textSmall"><b> </b></span></div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="border border-right-notstarted" text-right>
+              <span class="textLarge">3:05 P.M.</span>
+              <br>
+              <span class="textGray">55 minutes</span>
+              <div><span class="colorNotstarted textSmall">Not Started</span></div>
+            </ion-col>
+            <ion-col col-8 class="border border-left-notstarted">
+              <span class="textLarge"> </span>
+              <br>
+              <span class="textGray">
+                            <ion-icon name="person"></ion-icon> </span>
+              <div><span class="textSmall"><b> </b></span></div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 class="border border-right-notstarted" text-right>
+              <span class="textLarge">4:00 P.M.</span>
+              <br>
+              <span class="textGray">55 minutes</span>
+              <div><span class="colorNotstarted textSmall">Not Started</span></div>
+            </ion-col>
+            <ion-col col-8 class="border border-left-notstarted">
+              <span class="textLarge"> </span>
+              <br>
+              <span class="textGray">
+                              <ion-icon name="person"></ion-icon> </span>
+              <div><span class="textSmall"><b> </b></span></div>
+            </ion-col>
+          </ion-row>
+        </ion-grid> -->
+      </ion-list>
+    </ng-template>
   </div>
 </ion-content>

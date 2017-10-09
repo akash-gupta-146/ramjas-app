@@ -1,0 +1,40 @@
+<ion-header>
+        <ion-navbar color="primary">
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title>{{period.paper}}</ion-title>
+        </ion-navbar>
+      </ion-header>
+
+<ion-content class="background1">
+    <ion-list-header no-lines>
+        {{period.paper}} Attendance
+    </ion-list-header>
+    <progress value="22" max="100" style="width:100%; background:red">
+        </progress>
+    <ion-card no-padding>
+            <ion-item>
+                    <b item-left>
+                        Total classes held
+                    </b>
+                    <span item-right>120</span>
+            </ion-item>
+    </ion-card>
+    <ion-card no-padding>
+            <ion-item>
+                    <b item-left>
+                        Present
+                    </b>
+                    <span item-right> 80</span>
+        </ion-item>
+    </ion-card>
+    <ion-card no-padding>
+            <ion-item>
+                    <b item-left>
+                        Absent
+                    </b>
+                <span item-right>40</span>
+        </ion-item>
+    </ion-card>
+</ion-content>

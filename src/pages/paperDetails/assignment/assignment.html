@@ -1,0 +1,110 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        <ion-title>{{period.paper} Assignment}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="background1">
+    <ion-list-header no-lines>
+        {{period.paper}}
+        <ion-badge class="right">{{assignment.leftTime}}</ion-badge>
+    </ion-list-header>
+    <ion-item>
+        <b>
+                    Title: {{assignment.title}}
+                </b>
+        <p class="paragraph">
+            Description: {{assignment.description}}  </p>
+    </ion-item>
+    <ion-list-header no-lines>
+        Images
+    </ion-list-header>
+    <div class="image-slider" margin-top>
+        <ion-card>
+            <img src="http://www.expressdissertation.com/blog/wp-content/uploads/2015/08/assignment-writing.jpg">
+        </ion-card>
+        <ion-card>
+            <img src="https://us.123rf.com/450wm/ileezhun/ileezhun1601/ileezhun160100036/51510431-assignment-pink-orange-dots.jpg?ver=6">
+        </ion-card>
+        <ion-card>
+            <img src="http://realdealfrench.com/wp-content/uploads/2015/01/exam-650x401.jpg">
+        </ion-card>
+        <ion-card>
+            <img src="https://thrivingwriter.com/wp-content/uploads/2016/08/1-Assignment-Help-online-writing-service-for-students.jpg">
+        </ion-card>
+        <ion-card>
+            <img src="http://www.expressdissertation.com/blog/wp-content/uploads/2015/08/assignment-writing.jpg">
+        </ion-card>
+        <ion-card>
+            <img src="https://us.123rf.com/450wm/ileezhun/ileezhun1601/ileezhun160100036/51510431-assignment-pink-orange-dots.jpg?ver=6">
+        </ion-card>
+        <ion-card>
+            <img src="http://realdealfrench.com/wp-content/uploads/2015/01/exam-650x401.jpg">
+        </ion-card>
+        <ion-card>
+            <img src="https://thrivingwriter.com/wp-content/uploads/2016/08/1-Assignment-Help-online-writing-service-for-students.jpg">
+        </ion-card>
+    </div>
+    <ion-list>
+        <ion-list-header margin-top>
+            PDFs
+        </ion-list-header>
+        <ion-item>
+            <img src="http://www.freeiconspng.com/uploads/pdf-icon-png-17.png" item-left height="25px" width="25px"> File
+            File1.PDF
+            <img src="http://www.free-icons-download.net/images/download-button-icon-27698.png" item-right height="25px" width="25px">
+        </ion-item>
+        <ion-item>
+                <img src="http://www.freeiconspng.com/uploads/pdf-icon-png-17.png" item-left height="25px" width="25px"> File
+                File2.PDF
+                <img src="http://www.free-icons-download.net/images/download-button-icon-27698.png" item-right height="25px" width="25px">
+            </ion-item>
+
+            <ion-list-header margin-top>
+                Videos
+            </ion-list-header>
+            <div class="video-slider">
+            <iframe width="100%" src="https://www.youtube.com/embed/gbsXFE_Ap84" frameborder="0" allowfullscreen></iframe>
+            <iframe  width="100%" src="https://www.youtube.com/embed/UmKRevigZUg" frameborder="0" allowfullscreen></iframe>        
+        </div>
+
+        <ion-list-header margin-top>
+                Notes
+            </ion-list-header>
+            <ion-item>
+                <b>
+                    Nunc posuere non tortor id feugiat
+                </b>
+                <p class="paragraph">
+                    Praesent ullamcorper viverra arcu et cursus. Morbi pulvinar ac enim eu tincidunt. Aliquam aliquet purus quis orci blandit consectetur at ut lacus. Vestibulum ut orci ac tortor tempus tincidunt. Nunc et dui eros. Aliquam erat volutpat. Suspendisse potenti. Duis massa justo, commodo ut mauris at, vehicula pulvinar purus. Fusce mollis id purus eu hendrerit. Vestibulum vitae aliquam magna. Nam vel auctor nisi.                        
+                </p>
+            </ion-item>
+        </ion-list>
+</ion-content>
+<ion-footer no-padding>
+    <ion-grid no-padding>
+        <ion-row>
+        <ion-col col-4 no-padding>
+            <button ion-item color="primary" no-lines text-center (click)="showUpload()"> 
+                <!-- <ion-icon name="arrow-dropup-circle" item-left></ion-icon> -->
+                Upload
+            </button>
+        </ion-col>
+        <ion-col col-4 no-padding no-lines (click)="openMessages()">
+            <button ion-item  color="primary" text-center>
+                <!-- <ion-icon name="chatboxes" item-left></ion-icon> -->
+                Message
+            </button>
+    </ion-col>
+    <ion-col col-4 no-padding no-lines>
+            <button ion-item  color="primary" text-center (click)="openAssessment(period)">
+                <!-- <ion-icon name="bookmark" item-left></ion-icon> -->
+               Result
+            </button>
+    </ion-col>
+</ion-row>
+    </ion-grid>
+</ion-footer>

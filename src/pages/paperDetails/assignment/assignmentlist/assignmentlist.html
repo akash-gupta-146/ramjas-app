@@ -1,0 +1,20 @@
+<ion-header>
+        <ion-navbar color="primary">
+            <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+              </button>
+            <ion-title>{{period.paper}} Assignments</ion-title>
+        </ion-navbar>
+    </ion-header>
+    
+    <ion-content class="background1">
+            <ion-list>
+                    <button ion-item *ngFor="let a of assignments" (click)="openAssignment(a)">
+                        <ion-thumbnail item-start>
+                            <img [src]="a.image">
+                        </ion-thumbnail>
+                        <h2>{{a.title}}<ion-badge class="right">{{a.leftTime}} </ion-badge></h2>
+                        <p>{{a.description}} </p>
+                    </button>
+                </ion-list>
+    </ion-content>

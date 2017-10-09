@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        <ion-title>Yearly</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content  class="background1">
+    <div class="background2">
+        <img class="center-block" src="http://www.ramjascollege.edu/images/logo.png" padding-top>
+        <h5 text-center margin-bottom class="textWhite">Yearly Assessment</h5>
+    </div>
+    <ion-card *ngFor="let test of marks">
+        <ion-list>
+            <ion-list-header>
+                {{test.testpaper}}
+            </ion-list-header>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                Maths
+                <span item-right><b>{{test.math}}</b></span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                RV
+                <span item-right><b>{{test.rv}}</b></span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                ACCE
+                <span item-right><b>{{test.acce}}</b></span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                GC
+                <span item-right><b>{{test.gc}}</b></span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                Total
+                <span item-right><b>{{test.total}}</b></span>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+    <ion-card>
+        <ion-item>
+            <ion-icon name="filing"></ion-icon>
+            Total
+            <span item-right><b>2500/3000</b></span>
+        </ion-item>
+        <ion-item>
+            <ion-icon name="filing"></ion-icon>
+            Grade
+            <span item-right><b>A</b></span>
+        </ion-item>
+    </ion-card>
+</ion-content>

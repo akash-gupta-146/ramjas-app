@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        <ion-title>Overall Assessment</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content  class="background1">
+    <div class="background2">
+        <img class="center-block" src="http://www.ramjascollege.edu/images/logo.png" padding-top>
+        <h5 text-center margin-bottom class="textWhite">Overall Assessment</h5>
+    </div>
+    <ion-card *ngFor="let test of results">
+        <ion-list>
+            <ion-list-header>
+                Semester {{test.sem}}
+            </ion-list-header>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                Cumulative Test I
+                <span item-right><b>{{test.tp1marks}}</b></span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                Cumulative Test II
+                <span item-right><b>{{test.tp2marks}}</b></span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                Final Exam
+                <span item-right><b>{{test.tp3marks}}</b></span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                Total
+                <span item-right><b>{{test.total}}</b></span>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+    <ion-card>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                Total
+                <span item-right><b>14,300/18,000</b></span>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="filing"></ion-icon>
+                Grade
+                <span item-right><b>A</b></span>
+            </ion-item>
+        </ion-card>
+</ion-content>

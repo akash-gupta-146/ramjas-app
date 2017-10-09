@@ -20,7 +20,7 @@ export class LoginPage {
   }
 
   login(){
-    this.event.publish("user:login", {category: this.category});
+    this.event.publish("user:login", {category: this.category, name: this.name});
     this.navCtrl.setRoot(HomePage);
   }
 

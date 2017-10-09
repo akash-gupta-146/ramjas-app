@@ -1,0 +1,26 @@
+<ion-header>
+        <ion-navbar color="primary">
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title>Semester</ion-title>
+        </ion-navbar>
+      </ion-header>
+
+<ion-content>
+    <div class="background2">
+        <img class="center-block" src="http://www.ramjascollege.edu/images/logo.png" padding-top>
+        <h5 text-center margin-bottom class="textWhite">Semester View</h5>
+        <ion-segment [(ngModel)]="assessment">
+            <ion-segment-button *ngFor="let sem of semester3c;let d = index;" [value]="dayArray[d]">
+                <span class="textWhite">{{ sem }}</span>
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+    <div [ngSwitch]="assessment">
+            <ng-template let-day ngFor [ngForOf]="dayArray" let-j="index">
+
+            </ng-template>
+          </div>    
+</ion-content>

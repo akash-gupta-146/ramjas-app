@@ -23,11 +23,19 @@ page-home {
     font-size:20px;
 }
 .border-right-notstarted{
-    border-right-color: color($colors, color5);
+    border-right-color: color($colors, color1);
 }
 .border-left-notstarted{
-    border-left-color: color($colors, color5);
+    border-left-color: color($colors, color1);
 }
 .colorNotstarted{
-    color:color($colors, color5);
+    color:color($colors, color1);
+}
+.timetable-item{
+}
+.left-col{
+    padding-right: 5px !important;
+}
+.right-col{
+    padding-left:5px !important;
 }
